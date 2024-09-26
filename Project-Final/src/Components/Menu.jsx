@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Menu_API } from '../Constants'
+import SubMenu from './SubMenu'
 
 const Menu = () => {
 
@@ -22,7 +23,8 @@ const Menu = () => {
   return (
     <div>
       {menuData && menuData.map((item) => {
-        console.log(item)
+
+        return <SubMenu obj={item} />
       })}
     </div>
   )
