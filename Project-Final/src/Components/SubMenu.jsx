@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Cloudinary_URL } from '../Constants';
 import {useDispatch} from "react-redux"
-import { addItem } from '../Utils/CartSlice';
+import { addItem, removeItem } from '../Utils/CartSlice';
 
 
 
@@ -45,7 +45,9 @@ const SubMenu = ({ obj }) => {
                 </div>
                 <div className="flex items-center space-x-2">
                   {/* Remove button */}
-                  <button className="bg-gray-300 text-black rounded-full w-8 h-8 flex justify-center items-center">
+                  <button onClick={() => {
+                    dispatch(removeItem(item.card.info))
+                  }} className="bg-gray-300 text-black rounded-full w-8 h-8 flex justify-center items-center">
                     -
                   </button>
 

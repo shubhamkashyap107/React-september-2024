@@ -5,6 +5,9 @@ import SubMenu from './SubMenu'
 
 const Menu = () => {
 
+
+
+
   const{resId} = useParams()
   const[menuData, setMenuData] = useState([])
 

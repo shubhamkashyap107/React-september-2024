@@ -19,10 +19,25 @@ const cartSlice = createSlice({
                 existingItem.quantity++;
             }
    
+        },
+        removeItem : (state, action) => {
+            let existingItem = state.find((item) =>  item.id === action.payload.id )
+
+            if(existingItem)
+                {
+                    if(existingItem.quantity > 1)
+                    {
+                        existingItem.quantity--;
+                    }
+                    else
+                    {
+                        return state.filter((item) => item.id != action.payload.id)
+                    }
+                }
         }
     }
 })
 
 
 export default cartSlice.reducer
-export const{addItem} = cartSlice.actions
+export const{addItem, removeItem} = cartSlice.actions

@@ -90,7 +90,7 @@ const Navbar = () => {
       {/* Navigation Links */}
       <div className='flex gap-8 text-lg'>
         <Link
-          to='/example1'
+          to='/'
           className='text-white hover:text-orange-200 transition duration-300'
         >
           Home
@@ -118,6 +118,12 @@ const Navbar = () => {
           className='text-white hover:text-orange-200 transition duration-300'
         >
           Blog
+        </Link>
+        <Link
+          to='/search'
+          className='text-white hover:text-orange-200 transition duration-300'
+        >
+          Search
         </Link>
       </div>
 
