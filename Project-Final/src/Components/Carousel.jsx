@@ -49,6 +49,7 @@ const PrevArrow = (props) => {
 };
 
 const IconCarousel = ({data}) => {
+  console.log(data)
   const settings = {
     dots: true,
     infinite: true,
@@ -91,17 +92,18 @@ const IconCarousel = ({data}) => {
       <Slider {...settings}>
       
         {
-            data.map((item) => {
+            data && data.map((item) => {
+              console.log(item)
               
               let str = item.description
-              if(str.includes(" "))
+              if(str && str.includes(" "))
               {
                 let arr = str.split(" ")
                 str = arr.join("")
               }
 
-              if(str.includes("North")) return
-              if(str.includes("Chinese")) return
+              if(str && str.includes("North")) return
+              if(str && str.includes("Chinese")) return
               // console.log(str)
 
 

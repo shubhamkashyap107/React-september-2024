@@ -1,80 +1,8 @@
-// import React, { useState } from 'react';
-// import { Cloudinary_URL, Search_API, Search_API2 } from '../Constants';
-// import Loader from './Loader';
-
-// const Search = () => {
-//   const [query, setQuery] = useState('');
-//   const [items, setItems] = useState([]);
-//   const [showLoader, setShowLoader] = useState(false)
-
-//   return (
-//     <div className="flex flex-col items-center min-h-screen bg-gray-100 p-4">
-//       {/* Search Bar */}
-//       <div className="w-full max-w-lg p-4 bg-white rounded-lg shadow-md mb-6">
-//         <div className="flex space-x-2">
-//           <input
-//             className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-//             value={query}
-//             placeholder="Search for dishes..."
-//             onChange={(e) => setQuery(e.target.value)}
-//           />
-//           <button
-//             className="p-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition duration-300"
-//             onClick={() => {
-//               if (!query.length) return;
-
-//               const getData = async () => {
-//                 const data = await fetch(Search_API + query + Search_API2);
-//                 const json = await data.json();
-//                 setItems(json.data.cards[1].groupedCard.cardGroupMap.DISH?.cards.slice(1));
-//               };
-
-//               getData();
-//               setItems([])
-//               setShowLoader(true)
-//             }}
-//           >
-//             🔍
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Items Section */}
-//       <div className="w-full max-w-6xl h-full flex justify-center items-center">
-        
-//         {
-//             showLoader && !items.length ?  <Loader/> : <div>
-//                 {items && items.map((item) => {
-//                     const{name, price, imageId} = item.card.card.info
-
-//                     return <div>
-//                             <img src={Cloudinary_URL + imageId} />
-
-//                             <div>
-//                                 <h2>{name}</h2>
-//                                 <p>{price}</p>
-//                                 <div>
-//                                     <button>+</button>
-//                                     <button>-</button>
-//                                   </div>  
-//                             </div>
-//                         </div>
-//                 })}
-//             </div>
-//         }
-        
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Search;
-
+// react + redux and tailwind for styling
 
 import Shimmer from "./Shimmer"
 import React, { useState } from 'react';
 import { Cloudinary_URL, Search_API, Search_API2 } from '../Constants';
-import Loader from './Loader';
 import{useDispatch, useSelector}from "react-redux"
 import { addItem, removeItem } from '../Utils/CartSlice';
 import { addSearchResults } from "../Utils/SearchSlice";
